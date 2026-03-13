@@ -1,0 +1,19 @@
+{
+  "name": "plant-backend-v1",
+  "version": "1.0.0",
+  "description": "智能植物养护助手后端基础版",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0",
+    "mqtt": "^5.0.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

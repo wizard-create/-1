@@ -38,7 +38,7 @@ class MQTTHandler {
       topics.forEach(topic => {
         this.client.subscribe(topic, { qos: 1 }, (err) => {
           if (!err) {
-            console.log(`📡 已订阅主题: ${topic}`);
+            console.log(`已订阅主题: ${topic}`);
           }
         });
       });

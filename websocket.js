@@ -21,7 +21,7 @@ class WebSocketServer {
         connectedAt: new Date()
       });
 
-      console.log(`🟢 新客户端连接 [${clientId}] from ${clientIp}`);
+      console.log(`新客户端连接 [${clientId}] from ${clientIp}`);
 
       // 处理收到的消息
       ws.on('message', (message) => {
@@ -38,13 +38,13 @@ class WebSocketServer {
 
       // 处理断开连接
       ws.on('close', () => {
-        console.log(`🔴 客户端断开连接 [${clientId}]`);
+        console.log(`客户端断开连接 [${clientId}]`);
         this.clients.delete(clientId);
       });
 
       // 处理错误
       ws.on('error', (error) => {
-        console.error(`❌ 客户端错误 [${clientId}]:`, error.message);
+        console.error(`客户端错误 [${clientId}]:`, error.message);
       });
 
       // 发送欢迎消息
@@ -148,7 +148,7 @@ class WebSocketServer {
     });
 
     if (pushCount > 0) {
-      console.log(`📤 已推送数据给 ${pushCount} 个客户端 (设备: ${deviceId})`);
+      console.log(`已推送数据给 ${pushCount} 个客户端 (设备: ${deviceId})`);
     }
 
     return pushCount;
@@ -174,7 +174,7 @@ class WebSocketServer {
     });
 
     if (pushCount > 0) {
-      console.log(`⚠️ 已推送告警给 ${pushCount} 个客户端 (设备: ${deviceId})`);
+      console.log(`已推送告警给 ${pushCount} 个客户端 (设备: ${deviceId})`);
     }
 
     return pushCount;
@@ -195,7 +195,7 @@ class WebSocketServer {
       }
     });
 
-    console.log(`📢 广播消息给 ${broadcastCount} 个客户端`);
+    console.log(`广播消息给 ${broadcastCount} 个客户端`);
     return broadcastCount;
   }
 

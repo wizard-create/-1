@@ -25,7 +25,7 @@ class MQTTHandler {
     });
 
     this.client.on('connect', () => {
-      console.log('✅ MQTT服务器连接成功');
+      console.log('MQTT服务器连接成功');
       this.reconnectAttempts = 0;
 
       // 订阅所有主题
@@ -49,11 +49,11 @@ class MQTTHandler {
     });
 
     this.client.on('error', (err) => {
-      console.error('❌ MQTT错误:', err);
+      console.error('MQTT错误:', err);
     });
 
     this.client.on('close', () => {
-      console.log('🔴 MQTT连接关闭');
+      console.log('MQTT连接关闭');
       this.reconnect();
     });
   }
@@ -79,7 +79,7 @@ class MQTTHandler {
       
       const data = JSON.parse(message.toString());
       
-      console.log(`📥 收到设备 ${deviceId} ${type}数据:`, data);
+      console.log(`收到设备 ${deviceId} ${type}数据:`, data);
 
       switch(type) {
         case 'sensor':
@@ -95,7 +95,7 @@ class MQTTHandler {
           console.log('未知消息类型:', type);
       }
     } catch (error) {
-      console.error('❌ 处理MQTT消息出错:', error.message);
+      console.error('处理MQTT消息出错:', error.message);
     }
   }
 
@@ -294,7 +294,7 @@ class MQTTHandler {
       );
 
       this.wsServer.pushAlert(deviceId, alert);
-      console.log(`⚠️ 设备 ${deviceId} 告警:`, alert.message);
+      console.log(`设备 ${deviceId} 告警:`, alert.message);
     }
   }
 
@@ -308,7 +308,7 @@ class MQTTHandler {
         if (err) {
           console.error(`发送指令失败:`, err);
         } else {
-          console.log(`📤 发送指令给 ${deviceId}:`, command);
+          console.log(`发送指令给 ${deviceId}:`, command);
         }
       });
       

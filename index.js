@@ -130,7 +130,7 @@ setInterval(async () => {
           message: '设备离线超过5分钟'
         });
 
-        console.log(`⚠️ 设备 ${device.device_id} 离线`);
+        console.log(`设备 ${device.device_id} 离线`);
       }
     }
   } catch (error) {
@@ -160,7 +160,7 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`
-  🚀 智能植物养护助手后端 V2.0
+  智能植物养护助手后端 V2.0
   ===============================
   HTTP服务:   http://0.0.0.0:${PORT}
   WebSocket:  ws://0.0.0.0:${PORT}
